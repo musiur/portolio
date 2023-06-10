@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  @apply p-0 m-0 box-border scroll-smooth;
+}
+
+.container {
+  @apply px-3;
+}
+
+section {
+  @apply my-10 lg:my-16;
+}
+
+// headings
+
+h1 {
+  @apply text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold;
+}
+
+h2 {
+  @apply text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold;
+}
+
+h3 {
+  @apply text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-bold;
+}
+
+h4 {
+  @apply text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold;
+}
+
+h5 {
+  @apply text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl font-bold;
+}
+
+h6 {
+  @apply text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl font-bold;
+}
+
+// button styles and variants
+.btn {
+  @apply px-2 lg:px-4 py-[0.3rem] lg:py-[0.5rem] rounded-md lg:rounded-lg focus:outline-0 hover:opacity-[80%] transition ease-in-out duration-300 text-[0.8rem] lg:text-[1rem];
+}
+
+.btn-primary {
+  @extend .btn;
+  @apply bg-primary text-white;
+}
+
+.btn-secondary {
+  @extend .btn;
+  @apply bg-secondary;
+}
+
+.btn-outline {
+  @extend .btn;
+  @apply border border-gray-200;
+}
+
+.btn-error {
+  @extend .btn;
+  @apply bg-error text-white;
+}
+
+// icon style and variants
+.icon {
+  @apply hover:opacity-[70%] transition ease-in-out duration-300;
+}
+
+.icon-sm {
+  @extend .icon;
+  @apply text-sm;
+}
+
+.icon-base {
+  @extend .icon;
+  @apply text-lg;
+}
+
+.icon-lg {
+  @extend .icon;
+  @apply text-2xl;
+}
+
+// form styles
+.form {
+  div {
+    @apply grid grid-cols-1 gap-1 my-3 relative;
+
+    span {
+      @apply text-error font-normal;
+    }
+
+    label {
+      @apply font-semibold;
+    }
+
+    a {
+      @apply text-gray-600  hover:text-black hover:underline;
+    }
+  }
+
+  button {
+    @apply my-3;
+  }
+
+  h6 {
+    @apply text-center;
+  }
+}
+
+input,
+textarea {
+  @apply border border-gray-200 rounded-lg px-2 py-1 focus:outline-0 focus:shadow-md focus:border-gray-300;
+}
+
+// custom scroll bar styles
+/* width */
+::-webkit-scrollbar {
+  @apply w-1 rounded-full;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 rounded-full;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-400 rounded-full;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary rounded-full;
+}
