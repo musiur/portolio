@@ -8,14 +8,25 @@ module.exports = {
   theme: {
     extend: {
       animation: {
-        'reverse-spin': 'reverse-spin 1s linear infinite'
+        'reverse-spin': 'reverse-spin 1s linear infinite',
+        'text': 'text 5s ease infinite',
       },
       keyframes: {
         'reverse-spin': {
           from: {
             transform: 'rotate(360deg)'
           },
-        }
+        },
+        text: {
+          '0%, 100%': {
+            'background-size': '200% 200%',
+            'background-position': 'left center',
+          },
+          '50%': {
+            'background-size': '200% 200%',
+            'background-position': 'right center',
+          },
+        },
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

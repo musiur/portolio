@@ -11,6 +11,7 @@ import Badge from "./Badge";
 import { useContext, useEffect, useState } from "react";
 import { InitialUserValue, UserContext } from "@/contexts/UserProvider";
 import { ToasterContext } from "@/contexts/ToasterProvider";
+import Image from "next/image";
 
 interface NavigationItemType {
   id: number;
@@ -26,18 +27,13 @@ const NavigationItems: NavigationItemType[] = [
   },
   {
     id: 1,
-    text: "Contact",
-    link: "/contact",
+    text: "Works",
+    link: "/works",
   },
   {
     id: 2,
-    text: "Item",
-    link: "/item",
-  },
-  {
-    id: 3,
-    text: "Dashboard",
-    link: "/dashboard",
+    text: "Contact",
+    link: "/contact",
   },
 ];
 
@@ -45,9 +41,9 @@ const NavigationItems: NavigationItemType[] = [
 enum STYLES {
   NAV = "sticky top-0 backdrop-blur-2xl py-4",
   CONTAINER = "container flex items-center justify-between gap-5 mx-auto",
-  BRAND = "text-xl lg:text-2xl font-bold",
+  BRAND = "text-xl lg:text-2xl font-bold flex items-center justify-start gap-1",
   ITEMS = "hidden md:flex items-center justify-center",
-  ITEM = "py-2 px-4 hover:bg-gray-100 rounded-lg cursor-pointer transition ease-in-out duration-500",
+  ITEM = "py-2 px-4 text-sm text-gray-400 hover:text-gray-800 rounded-lg cursor-pointer transition ease-in-out duration-300",
   ACTIONS = "flex items-center justify-end gap-3 md:gap-5",
   CART = "relative h-full mr-3 md:mr-5 flex items-center justify-center",
   CART_ICON = "icon-base cursor-pointer",
@@ -86,7 +82,8 @@ const Navigation = () => {
       <nav className={STYLES.NAV}>
         <div className={STYLES.CONTAINER}>
           <div className={STYLES.BRAND}>
-            <Link href="/">BrandName</Link>
+            <Image src="/images/crescents.png" alt="" width={45} height={45} />
+            <Link href="/">musiur</Link>
           </div>
           <ul className={STYLES.ITEMS}>
             {NavigationItems.map((item: NavigationItemType) => {
@@ -99,16 +96,16 @@ const Navigation = () => {
             })}
           </ul>
           <div className={STYLES.ACTIONS}>
-            <Link href="/" className={STYLES.CART}>
+            {/* <Link href="/" className={STYLES.CART}>
               <Badge count={999} />
               <FontAwesomeIcon
                 icon={faCartShopping}
                 className={STYLES.CART_ICON}
               />
-            </Link>
+            </Link> */}
             {user.token ? (
               <button
-                className="btn-error"
+                className="btn-error "
                 onClick={() => {
                   localStorage.clear();
                   setUser(InitialUserValue);
@@ -144,7 +141,7 @@ const Navigation = () => {
         >
           <div className={STYLES.DRAWER_CONTAINER}>
             <div className={STYLES.BRAND}>
-              <div className="relative">
+              <div className="relative w-full">
                 <Link href="/" onClick={CloseDrawer}>
                   BrandName
                 </Link>
