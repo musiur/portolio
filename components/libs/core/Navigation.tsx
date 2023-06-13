@@ -39,7 +39,7 @@ const NavigationItems: NavigationItemType[] = [
 
 // styles
 enum STYLES {
-  NAV = "sticky top-0 backdrop-blur-2xl py-4",
+  NAV = "sticky top-0 backdrop-blur-2xl py-4 z-50",
   CONTAINER = "container flex items-center justify-between gap-5 mx-auto",
   BRAND = "text-xl lg:text-2xl font-bold flex items-center justify-start gap-1",
   ITEMS = "hidden md:flex items-center justify-center",
@@ -51,7 +51,7 @@ enum STYLES {
   MOUNTED = "translate-y-0",
   UNMOUNTED = "-translate-y-[100%]",
   DRAWER_CONTAINER = "container mx-auto py-5",
-  CLOSE_ICON = "icon-lg absolute top-0 right-0",
+  CLOSE_ICON = "icon-lg absolute top-0 right-0 mt-[10px]",
   DRAWER_ITEMS = "my-5",
   DRAWER_ITEM = "my-3",
 }
@@ -96,13 +96,6 @@ const Navigation = () => {
             })}
           </ul>
           <div className={STYLES.ACTIONS}>
-            {/* <Link href="/" className={STYLES.CART}>
-              <Badge count={999} />
-              <FontAwesomeIcon
-                icon={faCartShopping}
-                className={STYLES.CART_ICON}
-              />
-            </Link> */}
             {user.token ? (
               <button
                 className="btn-error "
@@ -142,9 +135,17 @@ const Navigation = () => {
           <div className={STYLES.DRAWER_CONTAINER}>
             <div className={STYLES.BRAND}>
               <div className="relative w-full">
-                <Link href="/" onClick={CloseDrawer}>
-                  BrandName
-                </Link>
+                <div className={STYLES.BRAND}>
+                  <Image
+                    src="/images/crescents.png"
+                    alt=""
+                    width={45}
+                    height={45}
+                  />
+                  <Link href="/" onClick={CloseDrawer}>
+                    musiur
+                  </Link>
+                </div>
                 <FontAwesomeIcon
                   icon={faTimes}
                   className={STYLES.CLOSE_ICON}

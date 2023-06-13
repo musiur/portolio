@@ -89,7 +89,7 @@ const Login = () => {
   }, [errors]);
   return (
     <PublicRoute>
-      <div className="container mx-auto">
+      <div className="container mx-auto min-h-[100vh]">
         <div className="max-w-[400px] mx-auto my-10 rounded-xl p-3 lg:p-5 border shadow">
           <div className="form">
             <h6>Login</h6>
