@@ -6,21 +6,22 @@ import {
 import ConstructionMessage from "./ConstructionMessage";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useId } from "react";
 
 const Footer = () => {
   const date = new Date();
-  const linkID = useId();
   const Links = [
     {
+      id: 0,
       icon: faGithub,
       link: "https://github.com/musiur",
     },
     {
+      id: 1,
       icon: faLinkedin,
       link: "https://www.linkedin.com/in/musiuropu/",
     },
     {
+      id: 2,
       icon: faStackOverflow,
       link: "https://stackoverflow.com/users/18190002/musiur-alam-opu",
     },
@@ -30,10 +31,10 @@ const Footer = () => {
       <ConstructionMessage />
       <div className="container mx-auto text-center py-10 grid grid-cols-1 gap-5">
         <div className="flex items-center justify-center gap-3">
-          {Links.slice(0,3).map((item) => {
+          {Links.map((item) => {
             return (
               <Link
-                key={linkID}
+                key={item.id}
                 href={item.link}
                 passHref={true}
                 target="_blank"
