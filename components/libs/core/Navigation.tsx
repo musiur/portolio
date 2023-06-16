@@ -1,7 +1,11 @@
 "use client";
 
 import {
+  faArrowDown,
+  faArrowRightRotate,
+  faArrowRightToFile,
   faCartShopping,
+  faChevronDown,
   faHamburger,
   faTimes,
 } from "@fortawesome/free-solid-svg-icons";
@@ -39,7 +43,7 @@ const NavigationItems: NavigationItemType[] = [
 
 // styles
 enum STYLES {
-  NAV = "sticky top-0 backdrop-blur-2xl py-4 z-50",
+  NAV = "sticky top-0 backdrop-blur-xl py-4 z-50",
   CONTAINER = "container flex items-center justify-between gap-5 mx-auto",
   BRAND = "text-xl lg:text-2xl font-bold flex items-center justify-start gap-1",
   ITEMS = "hidden md:flex items-center justify-center",
@@ -47,7 +51,7 @@ enum STYLES {
   ACTIONS = "flex items-center justify-end gap-3 md:gap-5",
   CART = "relative h-full mr-3 md:mr-5 flex items-center justify-center",
   CART_ICON = "icon-base cursor-pointer",
-  DRAWER = "fixed top-0 left-0 w-screen h-screen backdrop-blur-2xl transition ease-in-out duration-300 flex md:hidden z-10",
+  DRAWER = "fixed top-0 left-0 w-screen h-screen backdrop-blur-2xl transition ease-in-out duration-300 flex md:hidden z-[100]",
   MOUNTED = "translate-y-0",
   UNMOUNTED = "-translate-y-[100%]",
   DRAWER_CONTAINER = "container mx-auto py-5",
@@ -82,7 +86,7 @@ const Navigation = () => {
       <nav className={STYLES.NAV}>
         <div className={STYLES.CONTAINER}>
           <div className={STYLES.BRAND}>
-            <Image src="/images/crescents.png" alt="" width={45} height={45} />
+            <Image src="/images/crescents.png" alt="" width={55} height={55} />
             <Link href="/">musiur</Link>
           </div>
           <ul className={STYLES.ITEMS}>
@@ -96,6 +100,20 @@ const Navigation = () => {
             })}
           </ul>
           <div className={STYLES.ACTIONS}>
+            <Link
+              href="https://docs.google.com/document/d/11nSchtgCVFXV3gGwbB0n_URbf1jrJ_dS/edit?usp=sharing&ouid=114032079575241305407&rtpof=true&sd=true"
+              passHref={true}
+              target="_blank"
+            >
+              <button className="btn-secondary flex items-center justify-center gap-2">
+                <FontAwesomeIcon
+                  icon={faArrowRightToFile}
+                  className="text-sm text-gray-600"
+                />{" "}
+                Resume
+              </button>
+            </Link>
+
             {user.token ? (
               <button
                 className="btn-error "
@@ -116,6 +134,7 @@ const Navigation = () => {
                 <button className="btn-primary">Login</button>
               </Link>
             )}
+
             <div className="md:hidden">
               <FontAwesomeIcon
                 icon={faHamburger}
