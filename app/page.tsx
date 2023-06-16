@@ -31,7 +31,7 @@ const Home = () => {
   return (
     <>
       <section className="container mx-auto">
-        <div className="min-h-[60vh] flex items-center justify-center bg-[url('/images/ractangles_home_header.svg')] bg-no-repeat bg-right bg-contain">
+        <div className="min-h-[60vh] flex items-center justify-center bg-[url('/images/ractangles_home_header.svg')] bg-no-repeat bg-center bg-contain">
           <div className="grid grid-cols-1 gap-5 lg:gap-10 text-center">
             <h1 className="hd-animate">Musiur.Alam.Opu</h1>
             <p className="text-base lg:text-xl w-full md:w-2/3 lg:w-2/5 mx-auto text-gray-600">
@@ -99,7 +99,7 @@ const Home = () => {
             minim.
           </p>
         </div>
-        <Marquee className="py-10" direction="right">
+        <Marquee className="py-10" direction="right" pauseOnHover={true}>
           {techs.map((image) => {
             return (
               <div
@@ -111,15 +111,17 @@ const Home = () => {
             );
           })}
         </Marquee>
-        <button className="btn-secondary flex items-center justify-center gap-1 mx-auto">
-          All projects
-          <FontAwesomeIcon icon={faLongArrowRight} className="text-sm" />
-        </button>
+        <Link href="/works">
+          <button className="btn-secondary flex items-center justify-center gap-1 mx-auto">
+            All works
+            <FontAwesomeIcon icon={faLongArrowRight} className="text-sm" />
+          </button>
+        </Link>
       </section>
 
       <section className="section">
         <div className="container mx-auto text-center">
-          <h3>Blogs.To.Read</h3>
+          <h3>Articless.To.Read</h3>
           <p className="w-full md:w-4/5 lg:w-2/3 mx-auto my-5 text-gray-600 text-normal lg:text-lg">
             Veniam cillum minim elit veniam do quis ex veniam. Deserunt Lorem eu
             adipisicing cillum incididunt proident tempor eiusmod labore
@@ -129,7 +131,7 @@ const Home = () => {
             minim.
           </p>
         </div>
-        <Marquee className="py-10">
+        <Marquee className="py-10" pauseOnHover={true}>
           {techs.map((image) => {
             return (
               <div
@@ -141,10 +143,12 @@ const Home = () => {
             );
           })}
         </Marquee>
-        <button className="btn-secondary flex items-center justify-center gap-1 mx-auto">
-          All projects
-          <FontAwesomeIcon icon={faLongArrowRight} className="text-sm" />
-        </button>
+        <Link href="/articles">
+          <button className="btn-secondary flex items-center justify-center gap-1 mx-auto">
+            All Articles
+            <FontAwesomeIcon icon={faLongArrowRight} className="text-sm" />
+          </button>
+        </Link>
       </section>
     </>
   );
