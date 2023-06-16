@@ -1,4 +1,3 @@
-import Footer from "@/components/libs/core/Footer";
 import Link from "next/link";
 import { useId } from "react";
 const worksCards = [
@@ -75,7 +74,6 @@ const Works = () => {
           );
         })}
       </section>
-      <Footer />
     </div>
   );
 };

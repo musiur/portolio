@@ -1,5 +1,6 @@
 // "use client";
 
+import Footer from "@/components/libs/core/Footer";
 import {
   faArrowRightFromFile,
   faLongArrowRight,
@@ -150,6 +151,7 @@ const Home = () => {
           </button>
         </Link>
       </section>
+      <Footer />
     </>
   );
 };
