@@ -12,9 +12,9 @@ config.autoAddCss = false;
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Next Base Template",
+  title: "Musiur Alam Opu",
   description:
-    "Generated with NextJS, ReactJS, TailwindCSS, SASS/SCSS, TypeScript",
+    "As a Software Engineer with an eye for design and user experience, efficiency, I craft quality software from frontend- every aspect considered as much as possible. In order to be irreplaceable, I must always want to be different",
 };
 
 const RootLayout = ({ children }: { children: ReactElement }) => {

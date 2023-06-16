@@ -100,13 +100,12 @@ const Navigation = () => {
               passHref={true}
               target="_blank"
             >
-              <button className="btn-secondary">
-                Resume
-              </button>
+              <button className="btn-secondary">Resume</button>
             </Link>
 
             {user.token ? (
-              <button className="btn-primary flex items-center justify-center gap-2">
+              <button className="btn-error flex items-center justify-center gap-2">
+                Logout
                 <FontAwesomeIcon
                   icon={faSignOut}
                   className="text-sm text-gray-100"
@@ -119,8 +118,7 @@ const Navigation = () => {
                       text: "Logout successful!",
                     });
                   }}
-                />{" "}
-                Login
+                />
               </button>
             ) : (
               <Link href="/auth/login">
