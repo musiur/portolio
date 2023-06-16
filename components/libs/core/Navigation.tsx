@@ -104,20 +104,22 @@ const Navigation = () => {
             </Link>
 
             {user.token ? (
-              <button className="btn-error flex items-center justify-center gap-2">
+              <button
+                className="btn-error flex items-center justify-center gap-2"
+                onClick={() => {
+                  localStorage.clear();
+                  setUser(InitialUserValue);
+                  setToast({
+                    show: true,
+                    type: false,
+                    text: "Logout successful!",
+                  });
+                }}
+              >
                 Logout
                 <FontAwesomeIcon
                   icon={faSignOut}
                   className="text-sm text-gray-100"
-                  onClick={() => {
-                    localStorage.clear();
-                    setUser(InitialUserValue);
-                    setToast({
-                      show: true,
-                      type: false,
-                      text: "Logout successful!",
-                    });
-                  }}
                 />
               </button>
             ) : (
