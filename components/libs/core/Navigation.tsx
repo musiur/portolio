@@ -1,17 +1,12 @@
 "use client";
 
 import {
-  faArrowDown,
-  faArrowRightRotate,
-  faArrowRightToFile,
-  faCartShopping,
-  faChevronDown,
   faHamburger,
+  faSignOut,
   faTimes,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
-import Badge from "./Badge";
 import { useContext, useEffect, useState } from "react";
 import { InitialUserValue, UserContext } from "@/contexts/UserProvider";
 import { ToasterContext } from "@/contexts/ToasterProvider";
@@ -43,11 +38,11 @@ const NavigationItems: NavigationItemType[] = [
 
 // styles
 enum STYLES {
-  NAV = "sticky top-0 backdrop-blur-xl py-4 z-50",
+  NAV = "sticky top-0 backdrop-blur-2xl py-2 z-50",
   CONTAINER = "container flex items-center justify-between gap-5 mx-auto",
   BRAND = "text-xl lg:text-2xl font-bold flex items-center justify-start gap-1",
   ITEMS = "hidden md:flex items-center justify-center",
-  ITEM = "py-2 px-4 text-sm text-gray-400 hover:text-gray-800 rounded-lg cursor-pointer transition ease-in-out duration-300",
+  ITEM = "py-2 px-4 text-sm text-gray-600 hover:text-black rounded-lg cursor-pointer transition ease-in-out duration-300 font-semibold",
   ACTIONS = "flex items-center justify-end gap-3 md:gap-5",
   CART = "relative h-full mr-3 md:mr-5 flex items-center justify-center",
   CART_ICON = "icon-base cursor-pointer",
@@ -56,7 +51,7 @@ enum STYLES {
   UNMOUNTED = "-translate-y-[100%]",
   DRAWER_CONTAINER = "container mx-auto py-5",
   CLOSE_ICON = "icon-lg absolute top-0 right-0 mt-[10px]",
-  DRAWER_ITEMS = "my-5",
+  DRAWER_ITEMS = "my-5 px-2",
   DRAWER_ITEM = "my-3",
 }
 
@@ -105,29 +100,27 @@ const Navigation = () => {
               passHref={true}
               target="_blank"
             >
-              <button className="btn-secondary flex items-center justify-center gap-2">
-                <FontAwesomeIcon
-                  icon={faArrowRightToFile}
-                  className="text-sm text-gray-600"
-                />{" "}
+              <button className="btn-secondary">
                 Resume
               </button>
             </Link>
 
             {user.token ? (
-              <button
-                className="btn-error "
-                onClick={() => {
-                  localStorage.clear();
-                  setUser(InitialUserValue);
-                  setToast({
-                    show: true,
-                    type: false,
-                    text: "Logout successful!",
-                  });
-                }}
-              >
-                Logout
+              <button className="btn-primary flex items-center justify-center gap-2">
+                <FontAwesomeIcon
+                  icon={faSignOut}
+                  className="text-sm text-gray-100"
+                  onClick={() => {
+                    localStorage.clear();
+                    setUser(InitialUserValue);
+                    setToast({
+                      show: true,
+                      type: false,
+                      text: "Logout successful!",
+                    });
+                  }}
+                />{" "}
+                Login
               </button>
             ) : (
               <Link href="/auth/login">
