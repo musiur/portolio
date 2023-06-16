@@ -30,7 +30,7 @@ const Footer = () => {
       <ConstructionMessage />
       <div className="container mx-auto text-center py-10 grid grid-cols-1 gap-5">
         <div className="flex items-center justify-center gap-3">
-          {Links.map((item) => {
+          {Links.slice(0,3).map((item) => {
             return (
               <Link
                 key={linkID}
