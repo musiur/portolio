@@ -10,13 +10,15 @@ import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useContext, useEffect, useState } from "react";
 
 const Login = () => {
   const { setToast } = useContext(ToasterContext);
   const { setLoader } = useContext(LoaderContext);
-  const { user, setUser } = useContext(UserContext);
-  console.log(user);
+  const { setUser } = useContext(UserContext);
+  const router = useRouter();
+
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -70,6 +72,12 @@ const Login = () => {
           type: true,
           text: "Signin successful!",
         });
+        const previousRoute = localStorage.getItem("from");
+        if (previousRoute) {
+          router.push(previousRoute);
+        } else {
+          router.push("/auth/login");
+        }
       }
     } catch (error) {
       setToast({

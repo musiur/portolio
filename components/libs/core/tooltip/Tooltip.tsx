@@ -15,7 +15,7 @@ const Tooltip = ({
   const { text, type } = props;
   return (
     <div className="tooltip-parent">
-      <div
+      {/* <div
         className={`tooltip-indicator ${
           type === "primary"
             ? "tooltip-primary"
@@ -23,7 +23,7 @@ const Tooltip = ({
             ? "tooltip-secondary"
             : "tooltip-error"
         }`}
-      ></div>
+      ></div> */}
       <div
         className={`tooltip 
         ${
