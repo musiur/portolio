@@ -1,0 +1,29 @@
+.tooltip {
+  @apply hidden absolute px-3 py-[0.3rem] text-xs rounded bottom-0 right-0;
+}
+
+.tooltip-primary {
+  @apply bg-primary text-white;
+}
+
+.tooltip-secondary {
+  @apply bg-secondary;
+}
+
+.tooltip-error {
+  @apply bg-error text-white;
+}
+
+.tooltip-parent {
+  @apply relative;
+}
+.tooltip-indicator {
+  @apply hidden absolute h-[20px] w-[20px] rotate-[45deg] mt-[30px];
+}
+.tooltip-parent:hover > .tooltip {
+  @apply flex m-[-33px];
+}
+
+.tooltip-parent:hover > .tooltip-indicator {
+  @apply flex mt-[30px];
+}

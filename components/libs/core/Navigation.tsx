@@ -1,9 +1,18 @@
 "use client";
 
 import {
+  faArrowDownAZ,
+  faArrowRight,
+  faArrowRightArrowLeft,
+  faDashboard,
+  faFile,
   faHamburger,
+  faLink,
+  faPerson,
+  faRegistered,
   faSignOut,
   faTimes,
+  faUserCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
@@ -11,6 +20,8 @@ import { useContext, useEffect, useState } from "react";
 import { InitialUserValue, UserContext } from "@/contexts/UserProvider";
 import { ToasterContext } from "@/contexts/ToasterProvider";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+import Tooltip from "./tooltip/Tooltip";
 
 interface NavigationItemType {
   id: number;
@@ -56,6 +67,7 @@ enum STYLES {
 }
 
 const Navigation = () => {
+  const router = useRouter();
   const { user, setUser } = useContext(UserContext);
   const { setToast } = useContext(ToasterContext);
   const [openDrawer, setOpenDrawer] = useState<boolean>(false);
@@ -95,33 +107,60 @@ const Navigation = () => {
             })}
           </ul>
           <div className={STYLES.ACTIONS}>
-            <Link
-              href="https://docs.google.com/document/d/11nSchtgCVFXV3gGwbB0n_URbf1jrJ_dS/edit?usp=sharing&ouid=114032079575241305407&rtpof=true&sd=true"
-              passHref={true}
-              target="_blank"
+            <Tooltip
+              props={{
+                text: "Resume",
+                type: "secondary",
+              }}
             >
-              <button className="btn-secondary">Resume</button>
-            </Link>
+              <Link
+                href="https://docs.google.com/document/d/11nSchtgCVFXV3gGwbB0n_URbf1jrJ_dS/edit?usp=sharing&ouid=114032079575241305407&rtpof=true&sd=true"
+                passHref={true}
+                target="_blank"
+              >
+                <FontAwesomeIcon
+                  icon={faFile}
+                  className="icon-base text-gray-700"
+                />
+              </Link>
+            </Tooltip>
 
             {user.token ? (
-              <button
-                className="btn-error flex items-center justify-center gap-2"
-                onClick={() => {
-                  localStorage.clear();
-                  setUser(InitialUserValue);
-                  setToast({
-                    show: true,
-                    type: false,
-                    text: "Logout successful!",
-                  });
-                }}
-              >
-                Logout
-                <FontAwesomeIcon
-                  icon={faSignOut}
-                  className="text-sm text-gray-100"
-                />
-              </button>
+              <div className="flex items-center justify-center gap-5">
+                <Tooltip
+                  props={{
+                    text: "Dashboard",
+                    type: "primary",
+                  }}
+                >
+                  <Link href="/dashboard">
+                    <FontAwesomeIcon
+                      icon={faUserCircle}
+                      className="icon-base text-gray-700"
+                    />
+                  </Link>
+                </Tooltip>
+                <Tooltip
+                  props={{
+                    text: "Logout",
+                    type: "error",
+                  }}
+                >
+                  <FontAwesomeIcon
+                    icon={faSignOut}
+                    className="text-base text-error md:cursor-pointer"
+                    onClick={() => {
+                      localStorage.clear();
+                      setUser(InitialUserValue);
+                      setToast({
+                        show: true,
+                        type: false,
+                        text: "Logout successful!",
+                      });
+                    }}
+                  />
+                </Tooltip>
+              </div>
             ) : (
               <Link href="/auth/login">
                 <button className="btn-primary">Login</button>
