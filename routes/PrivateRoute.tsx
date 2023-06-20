@@ -10,7 +10,7 @@ const PrivateRoute = ({ children }: { children: ReactElement }) => {
 
   useEffect(() => {
     if (!user.token) {
-      router.push("/auth/login");
+        router.push("/auth/login");
     }
   }, [router, user.token]);
 

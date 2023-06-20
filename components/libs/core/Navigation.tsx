@@ -120,7 +120,7 @@ const Navigation = () => {
               >
                 <FontAwesomeIcon
                   icon={faFile}
-                  className="icon-base text-gray-700"
+                  className="icon-lg text-gray-700"
                 />
               </Link>
             </Tooltip>
@@ -136,7 +136,7 @@ const Navigation = () => {
                   <Link href="/dashboard">
                     <FontAwesomeIcon
                       icon={faUserCircle}
-                      className="icon-base text-gray-700"
+                      className="icon-lg text-gray-700"
                     />
                   </Link>
                 </Tooltip>
@@ -148,7 +148,7 @@ const Navigation = () => {
                 >
                   <FontAwesomeIcon
                     icon={faSignOut}
-                    className="text-base text-error md:cursor-pointer"
+                    className="text-lg text-error md:cursor-pointer"
                     onClick={() => {
                       localStorage.clear();
                       setUser(InitialUserValue);
