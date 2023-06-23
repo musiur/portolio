@@ -30,23 +30,6 @@ const Footer = () => {
     <footer className="bg-gray-100">
       <ConstructionMessage />
       <div className="container mx-auto text-center py-10 grid grid-cols-1 gap-5">
-        <div className="flex items-center justify-center gap-3">
-          {/* {Links.map((item) => {
-            return (
-              <Link
-                key={item.id}
-                href={item.link}
-                passHref={true}
-                target="_blank"
-              >
-                <FontAwesomeIcon
-                  icon={item.icon}
-                  className="text-4xl text-black hover:text-gray-600 transition duration-150 ease-in-out"
-                />
-              </Link>
-            );
-          })} */}
-        </div>
         <p>All rights reserved @{date.getFullYear()}</p>
       </div>
     </footer>
