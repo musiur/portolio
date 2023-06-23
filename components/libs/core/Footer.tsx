@@ -31,7 +31,7 @@ const Footer = () => {
       <ConstructionMessage />
       <div className="container mx-auto text-center py-10 grid grid-cols-1 gap-5">
         <div className="flex items-center justify-center gap-3">
-          {Links.map((item) => {
+          {/* {Links.map((item) => {
             return (
               <Link
                 key={item.id}
@@ -45,7 +45,7 @@ const Footer = () => {
                 />
               </Link>
             );
-          })}
+          })} */}
         </div>
         <p>All rights reserved @{date.getFullYear()}</p>
       </div>

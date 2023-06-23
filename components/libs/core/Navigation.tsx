@@ -1,15 +1,8 @@
 "use client";
 
 import {
-  faArrowDownAZ,
-  faArrowRight,
-  faArrowRightArrowLeft,
-  faDashboard,
   faFile,
   faHamburger,
-  faLink,
-  faPerson,
-  faRegistered,
   faSignOut,
   faTimes,
   faUserCircle,
@@ -22,11 +15,23 @@ import { ToasterContext } from "@/contexts/ToasterProvider";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import Tooltip from "./tooltip/Tooltip";
+import {
+  faGithub,
+  faLinkedin,
+  faStackOverflow,
+} from "@fortawesome/free-brands-svg-icons";
 
 interface NavigationItemType {
   id: number;
   text: string;
   link: string;
+}
+
+interface LinksType {
+  id: number;
+  text: string;
+  link: string;
+  icon: any;
 }
 
 const NavigationItems: NavigationItemType[] = [
@@ -42,8 +47,40 @@ const NavigationItems: NavigationItemType[] = [
   },
   {
     id: 2,
+    text: "Articles",
+    link: "/articles",
+  },
+  {
+    id: 3,
     text: "Contact",
     link: "/contact",
+  },
+];
+
+const Links: LinksType[] = [
+  {
+    id: 0,
+    icon: faGithub,
+    link: "https://github.com/musiur",
+    text: "GitHub",
+  },
+  {
+    id: 1,
+    icon: faLinkedin,
+    link: "https://www.linkedin.com/in/musiuropu/",
+    text: "LinkedIn",
+  },
+  {
+    id: 2,
+    icon: faStackOverflow,
+    link: "https://stackoverflow.com/users/18190002/musiur-alam-opu",
+    text: "StackOverflow",
+  },
+  {
+    id: 3,
+    icon: faFile,
+    link: "https://docs.google.com/document/d/11nSchtgCVFXV3gGwbB0n_URbf1jrJ_dS/edit?usp=sharing&ouid=114032079575241305407&rtpof=true&sd=true",
+    text: "Resume",
   },
 ];
 
@@ -94,7 +131,9 @@ const Navigation = () => {
         <div className={STYLES.CONTAINER}>
           <div className={STYLES.BRAND}>
             <Image src="/images/crescents.png" alt="" width={55} height={55} />
-            <Link href="/">musiur</Link>
+            <Link href="/" className="hidden md:flex">
+              musiur
+            </Link>
           </div>
           <ul className={STYLES.ITEMS}>
             {NavigationItems.map((item: NavigationItemType) => {
@@ -107,23 +146,24 @@ const Navigation = () => {
             })}
           </ul>
           <div className={STYLES.ACTIONS}>
-            <Tooltip
-              props={{
-                text: "Resume",
-                type: "secondary",
-              }}
-            >
-              <Link
-                href="https://docs.google.com/document/d/11nSchtgCVFXV3gGwbB0n_URbf1jrJ_dS/edit?usp=sharing&ouid=114032079575241305407&rtpof=true&sd=true"
-                passHref={true}
-                target="_blank"
-              >
-                <FontAwesomeIcon
-                  icon={faFile}
-                  className="icon-lg text-gray-700"
-                />
-              </Link>
-            </Tooltip>
+            {Links.map((item) => {
+              return (
+                <Tooltip
+                  key={item.id}
+                  props={{
+                    text: item.text,
+                    type: "secondary",
+                  }}
+                >
+                  <Link href={item.link} passHref={true} target="_blank">
+                    <FontAwesomeIcon
+                      icon={item.icon}
+                      className="icon-lg text-gray-700"
+                    />
+                  </Link>
+                </Tooltip>
+              );
+            })}
 
             {user.token ? (
               <div className="flex items-center justify-center gap-5">
