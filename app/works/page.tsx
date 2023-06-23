@@ -43,7 +43,7 @@ const Works = () => {
   return (
     <div>
       <div className="bg-gray-100">
-        <div className="section max-w-[600px] mx-auto text-center grid grid-cols-1 gap-5">
+        <div className="section max-w-[600px] mx-auto text-center grid grid-cols-1 gap-5 p-5">
           <h3>Works so far</h3>
           <p>
             Aute id officia culpa aute nisi mollit proident irure labore
@@ -60,9 +60,9 @@ const Works = () => {
           return (
             <div
               key={worksID}
-              className="border rounded-lg hover:shadow-xl grid grid-cols-3 gap-10"
+              className="border rounded-lg hover:shadow-xl grid grid-cols-1 lg:grid-cols-3 row-gap-10"
             >
-              <div className="col-span-1 h-full w-full bg-gray-100 rounded-md"></div>
+              <div className="col-span-1 h-full w-full bg-gray-100 rounded-md min-h-[200px]"></div>
               <div className="col-span-2 grid grid-cols-1 gap-5 p-5">
                 <h6>{item.title}</h6>
                 <p>{item.description}</p>
