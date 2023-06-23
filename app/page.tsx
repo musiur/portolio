@@ -37,7 +37,7 @@ const Home = () => {
             <h1 className="hd-animate">Musiur.Alam.Opu</h1>
             <p className="text-base lg:text-xl w-full md:w-2/3 lg:w-2/5 mx-auto text-gray-600">
               As a Software Engineer with an eye for design and user experience,
-              efficiency, I craft quality software from frontend- every aspect
+              efficiency, I craft quality software from frontend to backend - every aspect
               considered as much as possible. In order to be irreplaceable, I
               must always want to be different
             </p>
