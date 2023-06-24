@@ -56,7 +56,7 @@ const DashboardNav = () => {
           href="/dashboard"
           className={`flex items-center justify-center gap-2 ${
             pathname === "/dashboard"
-              ? "text-gray-600 hover:text-gray-800"
+              ? "text-black hover:text-gray-600"
               : "text-gray-400 hover:text-gray-600"
           }`}
         >
