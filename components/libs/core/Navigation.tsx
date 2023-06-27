@@ -130,6 +130,7 @@ const Navigation = () => {
     <>
       <nav className={STYLES.NAV}>
         <div className={STYLES.CONTAINER}>
+          <div className="flex items-center justify-start gap-10">
           <div className={STYLES.BRAND}>
             <Image src="/images/crescents.png" alt="" width={55} height={55} />
             <Link href="/" className="hidden md:flex">
@@ -146,6 +147,7 @@ const Navigation = () => {
               );
             })}
           </ul>
+          </div>
           <div className={STYLES.ACTIONS}>
             {Links.map((item) => {
               return (
