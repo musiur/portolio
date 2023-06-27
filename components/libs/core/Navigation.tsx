@@ -14,12 +14,13 @@ import { InitialUserValue, UserContext } from "@/contexts/UserProvider";
 import { ToasterContext } from "@/contexts/ToasterProvider";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import Tooltip from "./tooltip/Tooltip";
 import {
   faGithub,
   faLinkedin,
   faStackOverflow,
 } from "@fortawesome/free-brands-svg-icons";
+import { ModeToggle } from "@/components/ui/mode-toggle";
+import { Button } from "@/components/ui/button";
 
 interface NavigationItemType {
   id: number;
@@ -86,11 +87,11 @@ const Links: LinksType[] = [
 
 // styles
 enum STYLES {
-  NAV = "sticky top-0 backdrop-blur-2xl py-2 z-50",
+  NAV = "sticky top-0 backdrop-blur-2xl dark:bg-[#00000090] py-2 z-50",
   CONTAINER = "container flex items-center justify-between gap-5 mx-auto",
   BRAND = "text-xl lg:text-2xl font-bold flex items-center justify-start gap-1",
   ITEMS = "hidden md:flex items-center justify-center",
-  ITEM = "py-2 px-4 text-sm text-gray-600 hover:text-black rounded-lg cursor-pointer transition ease-in-out duration-300 font-semibold",
+  ITEM = "py-2 px-4 text-sm rounded-lg cursor-pointer transition ease-in-out duration-300 font-semibold",
   ACTIONS = "flex items-center justify-end gap-3 md:gap-5",
   CART = "relative h-full mr-3 md:mr-5 flex items-center justify-center",
   CART_ICON = "icon-base cursor-pointer",
@@ -148,64 +149,43 @@ const Navigation = () => {
           <div className={STYLES.ACTIONS}>
             {Links.map((item) => {
               return (
-                <Tooltip
+                <Link
                   key={item.id}
-                  props={{
-                    text: item.text,
-                    type: "secondary",
-                  }}
+                  href={item.link}
+                  passHref={true}
+                  target="_blank"
                 >
-                  <Link href={item.link} passHref={true} target="_blank">
-                    <FontAwesomeIcon
-                      icon={item.icon}
-                      className="icon-lg text-gray-700"
-                    />
-                  </Link>
-                </Tooltip>
+                  <FontAwesomeIcon icon={item.icon} className="icon-lg" />
+                </Link>
               );
             })}
 
             {user.token ? (
               <div className="flex items-center justify-center gap-5">
-                <Tooltip
-                  props={{
-                    text: "Dashboard",
-                    type: "primary",
+                <Link href="/dashboard">
+                  <FontAwesomeIcon icon={faUserCircle} className="icon-lg" />
+                </Link>
+                <FontAwesomeIcon
+                  icon={faSignOut}
+                  className="text-lg text-error md:cursor-pointer"
+                  onClick={() => {
+                    localStorage.clear();
+                    setUser(InitialUserValue);
+                    setToast({
+                      show: true,
+                      type: false,
+                      text: "Logout successful!",
+                    });
                   }}
-                >
-                  <Link href="/dashboard">
-                    <FontAwesomeIcon
-                      icon={faUserCircle}
-                      className="icon-lg text-gray-700"
-                    />
-                  </Link>
-                </Tooltip>
-                <Tooltip
-                  props={{
-                    text: "Logout",
-                    type: "error",
-                  }}
-                >
-                  <FontAwesomeIcon
-                    icon={faSignOut}
-                    className="text-lg text-error md:cursor-pointer"
-                    onClick={() => {
-                      localStorage.clear();
-                      setUser(InitialUserValue);
-                      setToast({
-                        show: true,
-                        type: false,
-                        text: "Logout successful!",
-                      });
-                    }}
-                  />
-                </Tooltip>
+                />
               </div>
             ) : (
               <Link href="/auth/login">
                 <button className="btn-primary">Login</button>
               </Link>
             )}
+
+            <ModeToggle />
 
             <div className="md:hidden">
               <FontAwesomeIcon
