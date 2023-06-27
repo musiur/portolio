@@ -2,7 +2,6 @@
 
 import Footer from "@/components/libs/core/Footer";
 import {
-  faArrowRightFromFile,
   faLongArrowRight,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -13,6 +12,8 @@ import Marquee from "react-fast-marquee";
 
 const Home = () => {
   const imageID = useId();
+  const workID = useId();
+  const articleID = useId();
   const techs = [
     "javascript",
     "react",
@@ -104,7 +105,7 @@ const Home = () => {
           {techs.map((image) => {
             return (
               <div
-                key={imageID}
+                key={workID}
                 className="h-[300px] w-[250px] bg-gray-300 rounded-lg p-5 m-5 border border-white hover:border-black transition ease-in-out duration-150"
               >
                 {image}
@@ -136,7 +137,7 @@ const Home = () => {
           {techs.map((image) => {
             return (
               <div
-                key={imageID}
+                key={articleID}
                 className="h-[300px] w-[250px] bg-gray-300 rounded-lg p-5 m-5 border border-white hover:border-black transition ease-in-out duration-150"
               >
                 {image}

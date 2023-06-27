@@ -20,7 +20,6 @@ import {
   faStackOverflow,
 } from "@fortawesome/free-brands-svg-icons";
 import { ModeToggle } from "@/components/ui/mode-toggle";
-import { Button } from "@/components/ui/button";
 
 interface NavigationItemType {
   id: number;
@@ -87,7 +86,7 @@ const Links: LinksType[] = [
 
 // styles
 enum STYLES {
-  NAV = "sticky top-0 backdrop-blur-2xl dark:bg-[#00000090] py-2 z-50",
+  NAV = "sticky top-0 backdrop-blur-2xl dark:bg-[#02081790] py-2 z-50",
   CONTAINER = "container flex items-center justify-between gap-5 mx-auto",
   BRAND = "text-xl lg:text-2xl font-bold flex items-center justify-start gap-1",
   ITEMS = "hidden md:flex items-center justify-center",
