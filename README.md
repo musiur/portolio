@@ -1,8 +1,8 @@
 # **MusiurAlamOpu**
 
-#### 0.1.0 (2023-06-27)
+#### v0.1.0 (2023-06-27)
 
-##### Features Changes
+### Features Changes
 
 *  dark mode and theme (2ec62471)
 *  read and edit state added (a1e588bb)
