@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import { ReactElement } from "react";
 import LayoutsWrapper from "@/components/libs/layouts/LayoutsWrapper";
 import CoreCompWrapper from "@/components/libs/core/CoreCompWrapper";
+import { ThemeProvider } from "@/components/theme-provider";
 
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
@@ -21,13 +22,15 @@ const RootLayout = ({ children }: { children: ReactElement }) => {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ContextWrapper>
-          <LayoutsWrapper>
-            <CoreCompWrapper>
-              <>{children}</>
-            </CoreCompWrapper>
-          </LayoutsWrapper>
-        </ContextWrapper>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <ContextWrapper>
+            <LayoutsWrapper>
+              <CoreCompWrapper>
+                <>{children}</>
+              </CoreCompWrapper>
+            </LayoutsWrapper>
+          </ContextWrapper>
+        </ThemeProvider>
       </body>
     </html>
   );

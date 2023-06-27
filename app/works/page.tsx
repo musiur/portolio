@@ -43,7 +43,7 @@ const Works = () => {
   return (
     <div>
       <div className="bg-gray-100">
-        <div className="section max-w-[600px] mx-auto text-center grid grid-cols-1 gap-5 p-5">
+        <div className="section max-w-[600px] mx-auto text-center grid grid-cols-1 gap-5 p-5 dark:text-black">
           <h3>Works so far</h3>
           <p>
             Aute id officia culpa aute nisi mollit proident irure labore

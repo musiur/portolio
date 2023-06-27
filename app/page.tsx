@@ -32,10 +32,10 @@ const Home = () => {
   return (
     <>
       <section className="container mx-auto">
-        <div className="min-h-[60vh] flex items-center justify-center bg-[url('/images/ractangles_home_header.svg')] bg-no-repeat bg-center bg-contain">
+        <div className="py-20 flex items-center justify-center bg-[url('/images/ractangles_home_header.svg')] dark:bg-none bg-no-repeat bg-center bg-contain">
           <div className="grid grid-cols-1 gap-5 lg:gap-10 text-center">
             <h1 className="hd-animate">Musiur.Alam.Opu</h1>
-            <p className="text-base lg:text-xl w-full md:w-2/3 lg:w-2/5 mx-auto text-gray-600">
+            <p className="text-base lg:text-xl w-full md:w-2/3 lg:w-2/5 mx-auto text-gray-600 dark:text-gray-300">
               As a Software Engineer with an eye for design and user experience,
               efficiency, I craft quality software from frontend to backend - every aspect
               considered as much as possible. In order to be irreplaceable, I
@@ -70,7 +70,7 @@ const Home = () => {
       </section>
       <section className="bg-gray-100">
         <div className="section">
-          <h3 className="text-center">Tech.Stack</h3>
+          <h3 className="text-center dark:text-black">Tech.Stack</h3>
           <Marquee className="pt-10">
             {techs.map((image) => {
               return (
@@ -91,7 +91,7 @@ const Home = () => {
       <section className="section">
         <div className="container mx-auto text-center">
           <h3>Recent.Works</h3>
-          <p className="w-full md:w-4/5 lg:w-2/3 mx-auto my-5 text-gray-600 text-normal lg:text-lg">
+          <p className="w-full md:w-4/5 lg:w-2/3 mx-auto my-5 text-gray-600 text-normal lg:text-lg dark:text-gray-300">
             Veniam cillum minim elit veniam do quis ex veniam. Deserunt Lorem eu
             adipisicing cillum incididunt proident tempor eiusmod labore
             deserunt reprehenderit cupidatat veniam. Ex quis pariatur sit
@@ -123,7 +123,7 @@ const Home = () => {
       <section className="section">
         <div className="container mx-auto text-center">
           <h3>Articless.To.Read</h3>
-          <p className="w-full md:w-4/5 lg:w-2/3 mx-auto my-5 text-gray-600 text-normal lg:text-lg">
+          <p className="w-full md:w-4/5 lg:w-2/3 mx-auto my-5 text-gray-600 text-normal lg:text-lg dark:text-gray-300">
             Veniam cillum minim elit veniam do quis ex veniam. Deserunt Lorem eu
             adipisicing cillum incididunt proident tempor eiusmod labore
             deserunt reprehenderit cupidatat veniam. Ex quis pariatur sit

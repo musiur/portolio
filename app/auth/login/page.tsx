@@ -131,13 +131,13 @@ const Login = () => {
               />
             </div>
             <div>
-              <Link href="/auth/forget-password">Forget password?</Link>
+              <Link href="/auth/forget-password" className="dark:text-white hover:underline">Forget password?</Link>
             </div>
             <button className="btn-primary w-full" onClick={handleOnSubmit}>
               Login
             </button>
             <div>
-              <Link href="/auth/register" className="text-center">
+              <Link href="/auth/register" className="text-center dark:text-white">
                 {`Don't`} have account? Register now!
               </Link>
             </div>
