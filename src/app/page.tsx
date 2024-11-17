@@ -2,7 +2,7 @@
 
 const Page = () => {
   return (
-    <div className="container section text-4xl sm:text-5xl md:text-7xl font-bold text-center min-h-[calc(100vh-10rem)]">
+    <div className="container section text-4xl sm:text-5xl md:text-7xl font-bold text-center">
       <div className="flex flex-col items-center justify-center gap-4">
         <span className="text-blue-600 beiruti-600">
           وَأَحْسِنُوٓا۟ ۛ إِنَّ ٱللَّهَ يُحِبُّ ٱلْمُحْسِنِينَ
