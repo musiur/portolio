@@ -23,7 +23,16 @@ const Page = () => {
     },
   ];
   return (
-    <div>
+    <div className="[&>*]:text-center [&>*]:text-gray-400 dark:[&>*]:text-gray-600">
+      <section className="container section">
+        <h1 className="text-4xl md:text-5xl xl:text-6xl font-bold">
+          hi! i&apos;m <span className="text-blue-600">musiur</span> alam opu
+        </h1>
+        <p className="text-lg">
+          a software engineer with a passion for building products that are both
+          functional and aesthetically pleasing.
+        </p>
+      </section>
       <div className="flex items-center justify-center gap-4 container section">
         {socialLinks.map((link) => {
           const { id, name, href, icon } = link;
@@ -33,7 +42,7 @@ const Page = () => {
               href={href}
               passHref={true}
               target="_blank"
-              className="[&>svg]:stroke-[1.5px] [&>svg]:hover:stroke-blue-600"
+              className="[&>svg]:stroke-[1.5px] [&>svg]:hover:stroke-blue-600 transition ease-in-out duration-500"
             >
               {icon}
             </Link>
