@@ -1,10 +1,10 @@
 import Link from "next/link";
 import { ModeToggle } from "../toggle-mode";
 import Image from "next/image";
-import NavLink from "./navlink";
+import NavLink, { Type___Navlink } from "./navlink";
 
 const Navbar = () => {
-  const links = [
+  const links: Type___Navlink[] = [
     {
       id: 1,
       name: "About",
@@ -34,7 +34,7 @@ const Navbar = () => {
           />
         </Link>
         <div className="flex items-center gap-4">
-          {links.map((data) => {
+          {links.map((data: Type___Navlink) => {
             return <NavLink key={data.id} data={data} />;
           })}
         </div>

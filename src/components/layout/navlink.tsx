@@ -4,7 +4,13 @@ import clsx from "clsx";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-const NavLink = ({ data }: { data: any }) => {
+export type Type___Navlink = { id: number; name: string; href: string }
+
+const NavLink = ({
+  data,
+}: {
+  data: Type___Navlink;
+}) => {
   const { id, name, href } = data;
   const pathname = usePathname();
   return (
