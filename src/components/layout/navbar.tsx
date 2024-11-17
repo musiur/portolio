@@ -3,23 +3,23 @@ import { ModeToggle } from "../toggle-mode";
 import { Github, Linkedin, Twitter } from "lucide-react";
 
 const Navbar = () => {
-//   const links = [
-//     {
-//       id: 1,
-//       name: "About",
-//       href: "/about",
-//     },
-//     {
-//       id: 2,
-//       name: "Projects",
-//       href: "/projects",
-//     },
-//     {
-//       id: 3,
-//       name: "Contact",
-//       href: "/contact",
-//     },
-//   ];
+  //   const links = [
+  //     {
+  //       id: 1,
+  //       name: "About",
+  //       href: "/about",
+  //     },
+  //     {
+  //       id: 2,
+  //       name: "Projects",
+  //       href: "/projects",
+  //     },
+  //     {
+  //       id: 3,
+  //       name: "Contact",
+  //       href: "/contact",
+  //     },
+  //   ];
   const socialLinks = [
     {
       id: 1,
@@ -41,8 +41,8 @@ const Navbar = () => {
     },
   ];
   return (
-    <header className="p-4 max-w-xl mx-auto mt-4 sticky top-4 backdrop-blur-md bg-background/50 border border-border/50 rounded-full">
-      <nav className="flex justify-between items-center">
+    <header className="container sticky top-4">
+      <nav className="flex justify-between items-center p-4 max-w-xl mx-auto mt-4 backdrop-blur-md bg-background/50 border border-border/50 rounded-full">
         <div className="text-2xl font-bold">musiur</div>
         <div className="flex items-center gap-4">
           {socialLinks.map((link) => {

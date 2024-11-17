@@ -1,8 +1,17 @@
+
+
 const Page = () => {
   return (
-    <div className="container section text-4xl sm:text-5xl md:text-7xl xl:text-9xl font-bold text-center min-h-[calc(100vh-10rem)]">
-      Hi! I am <span className="text-blue-600">musiur</span>, a software
-      engineer.
+    <div className="container section text-4xl sm:text-5xl md:text-7xl font-bold text-center min-h-[calc(100vh-10rem)]">
+      <div className="flex flex-col items-center justify-center gap-4">
+        <span className="text-blue-600 beiruti-600">
+          وَأَحْسِنُوٓا۟ ۛ إِنَّ ٱللَّهَ يُحِبُّ ٱلْمُحْسِنِينَ
+        </span>
+        <span className="text-gray-400 dark:text-gray-600">
+          And do good, for Allah certainly loves the good-doers.
+        </span>
+        <span className="text-gray-400 dark:text-gray-600 text-xl"> - Quran 2:195</span>
+      </div>
     </div>
   );
 };
